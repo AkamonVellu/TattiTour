@@ -271,12 +271,6 @@ footer p{margin:0 0 .4rem}
     <h2 id="h-ilmo">Ilmoittaudu</h2>
     <div class="card">
       <form id="form" novalidate>
-        <fieldset class="seg">
-          <legend>Lähdetkö mukaan?</legend>
-          <label><input type="radio" name="tulossa" value="kylla" checked><span>Kyllä, lähden</span></label>
-          <label><input type="radio" name="tulossa" value="ei"><span>Ei, en pääse</span></label>
-        </fieldset>
-
         <label class="lbl" for="nimi">Nimi</label>
         <input type="text" id="nimi" autocomplete="name" maxlength="60">
         <p class="hint" id="nimi-hint">Oikea nimesi, jotta Häsä tietää, keneltä maksu kuuluu. Ei näy muille.</p>
@@ -550,7 +544,7 @@ if (LIVE) setInterval(() => { if (!document.hidden) load(); }, 60000);
 
 /* ---------- Lomake ---------- */
 const form = $("form");
-const tulossa = () => form.elements.tulossa.value === "kylla";
+const tulossa = () => true;
 function syncMode(){
   const y = tulossa();
   $("osa-kylla").hidden = !y;
